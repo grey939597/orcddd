@@ -81,10 +81,6 @@ export default {
           name: "SPOTIFY",
           url: "https://www.spotify.com",
         },
-        {
-          name: "SPOTIFY",
-          url: "https://www.spotify.com",
-        },
       ],
       m1: null,
       m2: null,
@@ -261,13 +257,8 @@ export default {
   }
   .links {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: #fff;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     li {
-      &:not(:nth-child(3n)) {
-        border-right: 1px solid rgb(219, 219, 219);
-      }
-      border-bottom: 1px solid rgb(219, 219, 219);
       width: 100%;
       display: flex;
       align-items: center;
@@ -279,16 +270,15 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: 100%;
         font-size: 18px;
         font-weight: 900;
         cursor: pointer;
-        color: #515151;
+        color: #fff;
         font-size: 2rem;
-        &:hover {
-          color: #fff;
-          background-color: #9588b8;
+        i {
+          background-color: #515151;
+          padding: 5vw 5.5vw;
+          border-radius: 8px;
         }
       }
     }
