@@ -6,7 +6,7 @@
       class="album-cover"
       @click.stop="pause"
     />
-    <div class="toggle-btn" @click="show = !show">List</div>
+    <!-- <div class="toggle-btn" @click="show = !show">List</div>
     <ul class="playlist" :class="{ show: show }">
       <li @click.stop="play1" :class="{ active: current === 'm1' }">
         <span class="music__title">November</span>
@@ -28,7 +28,7 @@
         <span class="music__title">Human Like Love Like Human</span>
         <span class="music__duration">2:57</span>
       </li>
-    </ul>
+    </ul> -->
     <div class="description">
       <p>Earth Sandwitch Vol.1</p>
       <span>OUT NOW on All Stores!</span>
@@ -36,7 +36,7 @@
     <ul class="links">
       <template v-for="(link, index) in links">
         <li :key="index">
-          <a :href="link.href">{{ link.name }}</a>
+          <a :href="link.href"><i class="fab fa-apple"></i></a>
         </li>
       </template>
     </ul>
@@ -60,6 +60,26 @@ export default {
         {
           name: "MELON",
           url: "https://melon.com",
+        },
+        {
+          name: "SPOTIFY",
+          url: "https://www.spotify.com",
+        },
+        {
+          name: "SPOTIFY",
+          url: "https://www.spotify.com",
+        },
+        {
+          name: "SPOTIFY",
+          url: "https://www.spotify.com",
+        },
+        {
+          name: "SPOTIFY",
+          url: "https://www.spotify.com",
+        },
+        {
+          name: "SPOTIFY",
+          url: "https://www.spotify.com",
         },
         {
           name: "SPOTIFY",
@@ -159,15 +179,17 @@ export default {
 
 <style lang="scss" scoped>
 .artist__container {
-  width: 320px;
+  * {
+    box-sizing: border-box;
+  }
+  background-color: transparent;
+  width: 100%;
   min-height: 600px;
-  background-color: #fff;
   position: relative;
   z-index: 10;
-  border-radius: 8px;
-  margin: auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: auto;
   .album-cover {
     width: 100%;
     object-fit: contain;
@@ -183,7 +205,7 @@ export default {
     border-radius: 4px;
     font-size: 12px;
     color: #fff;
-    background: #2e2e2e;
+    background: #515151;
     z-index: 11;
     cursor: pointer;
   }
@@ -221,7 +243,11 @@ export default {
     }
   }
   .description {
-    background-color: #2e2e2e;
+    background-color: transparent;
+    /* background-color: #515151; */
+    /* background-image: url("../assets/space.jpg");
+    background-position: center;
+    background-size: cover; */
     color: #fff;
     padding: 16px;
     margin: 0;
@@ -234,14 +260,19 @@ export default {
     }
   }
   .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #fff;
     li {
-      &:not(:last-child) {
-        border-bottom: 1px solid rgb(219, 219, 219);
+      &:not(:nth-child(3n)) {
+        border-right: 1px solid rgb(219, 219, 219);
       }
+      border-bottom: 1px solid rgb(219, 219, 219);
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      height: 30vw;
       a {
         all: unset;
         padding: 16px;
@@ -253,7 +284,8 @@ export default {
         font-size: 18px;
         font-weight: 900;
         cursor: pointer;
-        color: #9588b8;
+        color: #515151;
+        font-size: 2rem;
         &:hover {
           color: #fff;
           background-color: #9588b8;

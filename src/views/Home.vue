@@ -26,19 +26,21 @@ export default {
   align-items: center;
 }
 .bg {
-  background-image: url("../assets/bg-cover.jpg");
+  background-image: url("../assets/space.jpg");
+  background-size: cover;
+  background-position: center;
+  /* background-image: url("../assets/bg-cover.jpg"); */
 }
 .page-background {
   background-size: cover;
-  filter: blur(50px);
+  /* filter: blur(50px); */
   position: fixed;
   width: 100%;
   height: 100%;
   transition: all 0.1s ease;
-  opacity: 0.95;
-  position: absolute;
+  /* opacity: 0.95; */
 }
 .box-shadow {
-  box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.8);
+  /* box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.8); */
 }
 </style>
