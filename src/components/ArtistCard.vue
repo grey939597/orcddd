@@ -33,6 +33,11 @@
       <p>Earth Sandwitch Vol.1</p>
       <span>OUT NOW on All Stores!</span>
     </div>
+    <div
+      style="height: 1px; width: 90%; background-color: #dadada; margin: 0 auto"
+    >
+      &nbsp;
+    </div>
     <ul class="links">
       <template v-for="(link, index) in links">
         <li :key="index">
@@ -178,20 +183,27 @@ export default {
   * {
     box-sizing: border-box;
   }
-  background-color: transparent;
-  width: 100%;
-  min-height: 600px;
+  background-color: rgba(255, 255, 255, 0.5);
+  @media (max-width: 480px) {
+    background-color: transparent;
+  }
+  border-radius: 8px;
+  padding: 40px 0;
+  max-width: 480px;
+  width: 95%;
+  margin: auto;
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
   margin-bottom: auto;
   .album-cover {
-    width: 100%;
+    width: 90%;
     object-fit: contain;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    margin: 0;
+    margin: 0 auto;
+    border-radius: 8px;
   }
   .toggle-btn {
     position: absolute;
@@ -256,6 +268,8 @@ export default {
     }
   }
   .links {
+    width: 90%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     li {
@@ -263,10 +277,10 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 30vw;
+      padding: 25% 0;
       a {
         all: unset;
-        padding: 16px;
+        padding: 15px 18px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -275,11 +289,8 @@ export default {
         cursor: pointer;
         color: #fff;
         font-size: 2rem;
-        i {
-          background-color: #515151;
-          padding: 5vw 5.5vw;
-          border-radius: 8px;
-        }
+        background-color: #515151;
+        border-radius: 8px;
       }
     }
   }
