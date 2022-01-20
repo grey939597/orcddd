@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <div class="bg page-background"></div>
-    <artist-card class="box-shadow" />
+    <artist-card />
   </div>
 </template>
 
@@ -23,19 +22,19 @@ export default {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  background: black;
+  overflow-x: hidden;
 }
 .bg {
-  background-image: url("../assets/bg-cover.jpg");
+  background-image: url("../assets/cloud.jpg");
+  width: 100%;
+  transform: rotate(180deg);
 }
 .page-background {
   background-size: cover;
-  filter: blur(50px);
   position: fixed;
   width: 100%;
   height: 100%;
-  transition: all 0.1s ease;
-  opacity: 0.95;
   position: absolute;
 }
 .box-shadow {

@@ -1,38 +1,15 @@
 <template>
   <div class="artist__container">
-    <img
-      src="../assets/album-cover.jpg"
-      alt="album-cover"
+    <video
+      src="../assets/sky.mp4"
       class="album-cover"
-      @click.stop="pause"
+      @click.stop="play"
+      autoplay
+      playsinline
+      loop
+      muted
+      style="transform: rotate(180deg)"
     />
-    <div class="toggle-btn" @click="show = !show">List</div>
-    <ul class="playlist" :class="{ show: show }">
-      <li @click.stop="play1" :class="{ active: current === 'm1' }">
-        <span class="music__title">November</span>
-        <span class="music__duration">2:11</span>
-      </li>
-      <li @click.stop="play2" :class="{ active: current === 'm2' }">
-        <span class="music__title">Rosé Rosé</span>
-        <span class="music__duration">2:41</span>
-      </li>
-      <li @click.stop="play3" :class="{ active: current === 'm3' }">
-        <span class="music__title">Love Ambulance</span>
-        <span class="music__duration">3:12</span>
-      </li>
-      <li @click.stop="play4" :class="{ active: current === 'm4' }">
-        <span class="music__title">Sing It</span>
-        <span class="music__duration">2:31</span>
-      </li>
-      <li @click.stop="play5" :class="{ active: current === 'm5' }">
-        <span class="music__title">Human Like Love Like Human</span>
-        <span class="music__duration">2:57</span>
-      </li>
-    </ul>
-    <div class="description">
-      <p>Earth Sandwitch Vol.1</p>
-      <span>OUT NOW on All Stores!</span>
-    </div>
     <ul class="links">
       <template v-for="(link, index) in links">
         <li :key="index">
@@ -50,19 +27,19 @@ export default {
     return {
       links: [
         {
-          name: "YOUTUBE",
+          name: "yOUtUbE",
           url: "https://youtube.com",
         },
         {
-          name: "APPLE MUSIC",
+          name: "iNSTaGRaM",
           url: "https://music.apple.com",
         },
         {
-          name: "MELON",
+          name: "pHotO",
           url: "https://melon.com",
         },
         {
-          name: "SPOTIFY",
+          name: "MuSic",
           url: "https://www.spotify.com",
         },
       ],
@@ -125,11 +102,11 @@ export default {
       this.play();
     },
     play() {
-      if (this.currentEl) {
-        this.currentEl.play();
-      } else {
-        this.m1.play();
-      }
+      // if (this.currentEl) {
+      //   this.currentEl.play();
+      // } else {
+      this.m5.play();
+      // }
     },
     pause() {
       this.m1.pause();
@@ -158,21 +135,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+* {
+  /* font-family: "Outfit", sans-serif; */
+  /* font-family: "Cinzel", serif; */
+  /* font-family: "Shadows Into Light", cursive; */
+  font-family: "Press Start 2P", cursive;
+  font-weight: 400;
+}
 .artist__container {
-  width: 320px;
-  min-height: 600px;
-  background-color: #fff;
+  width: 100%;
+  background-color: transparent;
   position: relative;
   z-index: 10;
-  border-radius: 8px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   .album-cover {
     width: 100%;
-    object-fit: contain;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
+    height: 180vw;
+    object-fit: cover;
     margin: 0;
   }
   .toggle-btn {
@@ -203,7 +188,6 @@ export default {
       background: black;
       color: #fff;
       font-size: 16px;
-      font-weight: 700;
       cursor: pointer;
       &:hover {
         color: #dadada;
@@ -216,7 +200,6 @@ export default {
       }
       .music__duration {
         font-size: 12px;
-        font-weight: 400;
       }
     }
   }
@@ -234,10 +217,17 @@ export default {
     }
   }
   .links {
+    background-image: url("../assets/galaga2.gif");
+    background-size: cover;
+    background-position-y: bottom;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     li {
-      &:not(:last-child) {
+      /* &:not(:last-child) {
         border-bottom: 1px solid rgb(219, 219, 219);
-      }
+      } */
       width: 100%;
       display: flex;
       align-items: center;
@@ -251,9 +241,8 @@ export default {
         width: 100%;
         height: 100%;
         font-size: 18px;
-        font-weight: 900;
         cursor: pointer;
-        color: #9588b8;
+        color: yellow;
         &:hover {
           color: #fff;
           background-color: #9588b8;
